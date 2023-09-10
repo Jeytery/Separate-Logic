@@ -13,6 +13,10 @@
 		3E16373B2AAB5D7B00A296A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1637392AAB5D7B00A296A0 /* Main.storyboard */; };
 		3E16373D2AAB5D7C00A296A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E16373C2AAB5D7C00A296A0 /* Assets.xcassets */; };
 		3E1637402AAB5D7C00A296A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E16373E2AAB5D7C00A296A0 /* LaunchScreen.storyboard */; };
+		3E9026182AACEA0C007DD560 /* Logic1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9026172AACEA0C007DD560 /* Logic1.swift */; };
+		3E90261C2AACEA45007DD560 /* PluginableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90261B2AACEA45007DD560 /* PluginableViewController.swift */; };
+		3E90261F2AACEAD6007DD560 /* FacadeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90261E2AACEAD6007DD560 /* FacadeModule.swift */; };
+		3E9026212AAD930A007DD560 /* ModuleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9026202AAD930A007DD560 /* ModuleExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		3E16373C2AAB5D7C00A296A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E16373F2AAB5D7C00A296A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E1637412AAB5D7C00A296A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E9026172AACEA0C007DD560 /* Logic1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic1.swift; sourceTree = "<group>"; };
+		3E90261B2AACEA45007DD560 /* PluginableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginableViewController.swift; sourceTree = "<group>"; };
+		3E90261E2AACEAD6007DD560 /* FacadeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadeModule.swift; sourceTree = "<group>"; };
+		3E9026202AAD930A007DD560 /* ModuleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		3E1637322AAB5D7B00A296A0 /* test-logic */ = {
 			isa = PBXGroup;
 			children = (
+				3E90261D2AACEACA007DD560 /* FacadeModule */,
+				3E90261A2AACEA2B007DD560 /* Pluginable */,
+				3E9026192AACEA1F007DD560 /* Logic1 */,
 				3E1637332AAB5D7B00A296A0 /* AppDelegate.swift */,
 				3E1637352AAB5D7B00A296A0 /* SceneDelegate.swift */,
-				3E1637372AAB5D7B00A296A0 /* ViewController.swift */,
 				3E1637392AAB5D7B00A296A0 /* Main.storyboard */,
 				3E16373C2AAB5D7C00A296A0 /* Assets.xcassets */,
 				3E16373E2AAB5D7C00A296A0 /* LaunchScreen.storyboard */,
 				3E1637412AAB5D7C00A296A0 /* Info.plist */,
 			);
 			path = "test-logic";
+			sourceTree = "<group>";
+		};
+		3E9026192AACEA1F007DD560 /* Logic1 */ = {
+			isa = PBXGroup;
+			children = (
+				3E9026172AACEA0C007DD560 /* Logic1.swift */,
+				3E1637372AAB5D7B00A296A0 /* ViewController.swift */,
+			);
+			path = Logic1;
+			sourceTree = "<group>";
+		};
+		3E90261A2AACEA2B007DD560 /* Pluginable */ = {
+			isa = PBXGroup;
+			children = (
+				3E90261B2AACEA45007DD560 /* PluginableViewController.swift */,
+				3E9026202AAD930A007DD560 /* ModuleExample.swift */,
+			);
+			path = Pluginable;
+			sourceTree = "<group>";
+		};
+		3E90261D2AACEACA007DD560 /* FacadeModule */ = {
+			isa = PBXGroup;
+			children = (
+				3E90261E2AACEAD6007DD560 /* FacadeModule.swift */,
+			);
+			path = FacadeModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1637382AAB5D7B00A296A0 /* ViewController.swift in Sources */,
+				3E90261F2AACEAD6007DD560 /* FacadeModule.swift in Sources */,
 				3E1637342AAB5D7B00A296A0 /* AppDelegate.swift in Sources */,
+				3E9026182AACEA0C007DD560 /* Logic1.swift in Sources */,
+				3E90261C2AACEA45007DD560 /* PluginableViewController.swift in Sources */,
 				3E1637362AAB5D7B00A296A0 /* SceneDelegate.swift in Sources */,
+				3E9026212AAD930A007DD560 /* ModuleExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
