@@ -42,10 +42,17 @@ class ManageExamplePlugin: Pluginable {
         installData(getData())
     }
 }
- 
-class PluginableExampleLogicPlugin: FacadePlugin {
+
+class PluginableExampleLogicPluginable: FacadePlugin {
     private var input: PluginableExampleLogicInput!
     
+    
+    func transform(input: PluginableExampleLogicInput) -> PluginableExampleLogicOuput {
+        self.input = input
+    }
+}
+ 
+class PluginableExampleLogicPlugin: PluginableExampleLogicPluginable {
     private weak var keyboardPlugin: KeyboardPlugin!
     private weak var manageExamplePlugin: ManageExamplePlugin!
     
@@ -55,8 +62,8 @@ class PluginableExampleLogicPlugin: FacadePlugin {
         super.init(plugins: [keyboardPlugin, manageExamplePlugin])
     }
     
-    func transform(input: PluginableExampleLogicInput) -> PluginableExampleLogicOuput {
-        self.input = input
+    override func transform(input: PluginableExampleLogicInput) -> PluginableExampleLogicOuput {
+        super.transform(input: input)
         keyboardPlugin.keyboardDidShow = {
             value in
             input.startLoading()
@@ -77,6 +84,8 @@ class PluginableExampleLogicPlugin: FacadePlugin {
 }
 
 // MARK: - usage variant 1
+
+// [!!!] you can't change logic realization
 class PluginableExampleViewController_variant1: PluginableViewController {
     private var output: PluginableExampleLogicOuput?
     
@@ -100,8 +109,10 @@ class PluginableExampleViewController_variant2: PluginableViewController {
     func startLoading() {}
 }
 
-func PluginableExampleModule(data: Int) -> PluginableExampleViewController_variant2 {
-    let logicPlugin = PluginableExampleLogicPlugin()
+func PluginableExampleModule(
+    data: Int,
+    logicPlugin: PluginableExampleLogicPluginable
+) -> PluginableExampleViewController_variant2 {
     let view = PluginableExampleViewController_variant2(data: data, plugins: logicPlugin)
     view.output = logicPlugin.transform(input: .init(startLoading: view.startLoading))
     return view
